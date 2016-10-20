@@ -1,0 +1,6 @@
+<% categories.each do |category| %>
+  <li class="level0">
+    <%= link_to category.name %>
+  </li>
+<% end %>
+<%= link_to t("category.show_more"), categories_path %>

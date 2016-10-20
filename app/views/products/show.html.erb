@@ -1,0 +1,15 @@
+<div class="labout span_1_of_a1">
+  <%= image_tag @product.image.url if @product.image? %>
+</div>
+<div class="cont1 span_2_of_a1">
+  <h1><%= @product.name %></h1>
+  <ul class="rating">
+  </ul>
+  <div class="price_single">
+    <span class="reducedfrom"><%=number_to_currency @product.discount %></span>
+    <span class="actual"><%= number_to_currency @product.price %></span>
+  </div>
+  <h2 class="quick"><%= t"product.quick_review" %></h2>
+  <p class="quick_desc"><%= @product.description %></p>
+</div>
+<div class="clearfix"></div>

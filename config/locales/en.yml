@@ -29,8 +29,7 @@ en:
     account: "Account "
     home: "HOME PAGE"
     introduction: "INTRODUCTION"
-    food: "FOODS"
-    drink: "DRINKS"
+    food_drink: "Food & Drink"
     contact: "CONTACT"
     cart: "CART"
     create_by: "© 2016 - User layout design by lexuangiang"
@@ -66,3 +65,13 @@ en:
   formats:
     short: "%b %d, %Y"
     long: "%B %e, %Y, %I:%M %p"
+  product:
+    order_by: "Order by"
+    asc_by_name: "Asc by name"
+    desc_by_name: "Desc by name"
+    asc_by_price: "Asc by price"
+    desc_by_price: "Desc by price"
+    quick_view: "Quick view"
+    quick_review: "Quick review:"
+  category:
+    show_more: "show more"

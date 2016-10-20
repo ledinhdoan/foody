@@ -1,20 +1,6 @@
-<div class="col-lg-3">
+<div class="col-md-3">
   <ul class="left-nav nav nav navbar-nav">
     <span class="menu-content"><%= t "layout.menu"%></span>
-    <li class="level0">
-      <%= link_to t("layout.demo_product") %>
-    </li>
-    <li class="level0">
-      <%= link_to t("layout.demo_product") %>
-    </li>
-    <li class="level0">
-      <%= link_to t("layout.demo_product") %>
-    </li>
-    <li class="level0">
-      <%= link_to t("layout.demo_product") %>
-    </li>
-    <li class="level0">
-      <%= link_to t("layout.demo_product") %>
-    </li>
+    <%= render "categories/categories", categories: category %>
   </ul>
 </div>

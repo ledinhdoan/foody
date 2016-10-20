@@ -1,0 +1,5 @@
+per_page: 9
+product:
+  limit: 6
+category:
+  limit: 10
