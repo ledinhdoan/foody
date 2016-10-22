@@ -1,0 +1,17 @@
+<%= simple_form_for @suggest, :html => {:multipart => true} do |f| %>
+  <div id="form-main">
+    <div id="form-div">
+      <div class="form" id="form1">
+        <%= f.input :name, label: t("suggest.name_label") %>
+
+        <%= f.input :body, label: t("suggest.message") %>
+
+        <%= f.input :price, label: t("suggest.price_suggest") %>
+
+        <%= f.input :image, as: :file, label: t("suggest.image") %>
+
+        <%= f.button :submit,  class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+    </div>
+  </div>
+<% end %>
