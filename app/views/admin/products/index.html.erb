@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <form action="#" method="get">
+        <div class="input-group">
+          <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+          <span class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9">
+      <table class="table table-list-search">
+        <thead>
+          <tr>
+            <th><%= t "product.id"%></th>
+            <th><%= t "product.image" %></th>
+            <th><%= t "product.name" %></th>
+            <th><%= t "product.function" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+          <tr>
+            <td class="hidden-xs"><%= product.id %></td>
+            <td><%= image_tag product.image.url if product.image? %></td>
+            <td class="hidden-xs"><%= link_to product.name,
+              admin_product_path(product) %></td>
+            <td>
+              <%= link_to t("product.edit"), edit_admin_product_path(product),
+                class: "btn btn-default" %>
+              <%= link_to t("product.delete"), admin_product_path(product),
+                class: "btn btn-danger", method: :delete, data: {confirm: t("product.sure")} %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= will_paginate @products %>
+</div>

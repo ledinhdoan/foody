@@ -10,4 +10,11 @@ class Product < ApplicationRecord
   scope :desc_by_price, ->{order price: :desc}
   scope :newest, ->{order created_at: :desc}
   scope :limit_product, ->{limit Settings.product.limit}
+
+  private
+  def picture_size
+    if image.size > Settings.size_image.megabytes
+      errors.add :image, I18n.t("product.error_image")
+    end
+  end
 end
