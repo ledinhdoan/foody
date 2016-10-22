@@ -37,26 +37,27 @@
             <div class="side-menu-container">
               <ul class="nav navbar-nav">
                 <li class="active"><%= link_to t("dashboard"), "#" %></li>
-                <li class="active"><%= link_to t("user.user"), "#"%></li>
+                <li class="active">
+                  <%= link_to t("user.user"), admin_users_path %></li>
                 <li class="panel panel-default" id="dropdown">
                 <li class="panel-body" data-toggle="collapse" href="#dropdown-lvl1">
-                  <%= t "category" %><span class="caret"></span></li>
+                  <%= t "category.category" %><span class="caret"></span></li>
                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                   <div class="panel-body">
                     <ul class="nav navbar-nav">
-                      <li><%= link_to t("newcategory"), "#" %></li>
-                      <li><%= link_to t("showallcategory"), "#" %></li>
+                      <li><%= link_to t("category.newcategory"), new_admin_category_path %></li>
+                      <li><%= link_to t("category.showallcategory"), admin_categories_path %></li>
                     </ul>
                   </div>
                 </div>
                 <li class="panel panel-default" id="dropdown">
                 <li class="panel-body" data-toggle="collapse" href="#dropdown-lvl2">
-                  <%= t "product" %> <span class="caret"></span></li>
+                  <%= t "product.product" %> <span class="caret"></span></li>
                 <div id="dropdown-lvl2" class="panel-collapse collapse">
                   <div class="panel-body">
                     <ul class="nav navbar-nav">
-                      <li><%= link_to t("newproduct"), "#" %></li>
-                      <li><%= link_to t("showallproduct"), "#" %></li>
+                      <li><%= link_to t("product.newproduct"), "#" %></li>
+                      <li><%= link_to t("product.showallproduct"), "#" %></li>
                     </ul>
                   </div>
                 </div>

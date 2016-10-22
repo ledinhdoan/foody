@@ -14,24 +14,22 @@
       <table class="table table-list-search">
         <thead>
           <tr>
-            <th><%= t "user.id"%></th>
-            <th><%= t "user.emails" %></th>
-            <th><%= t "user.function" %></th>
+            <th><%= t "category.id"%></th>
+            <th><%= t "category.name" %></th>
+            <th><%= t "category.function" %></th>
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
+          <% @categories.each do |category| %>
           <tr>
-            <td class="hidden-xs"><%= user.id %></td>
-            <td class="hidden-xs">
-              <%= link_to user.email, admin_user_path(user) %>
-            </td>
+            <td class="hidden-xs"><%= category.id %></td>
+            <td class="hidden-xs"><%= link_to category.name,
+              admin_category_path(category) %></td>
             <td>
-              <% if current_user.is_admin? && !user.is_user?(current_user) %>
-              <%= link_to t("user.delete"), admin_user_path(user),
-                class: "btn btn-danger", method: :delete, data: {confirm:
-                  t("user.sure")} %>
-              <% end %>
+              <%= link_to t("category.edit"), edit_admin_category_path(category),
+                class: "btn btn-default" %>
+              <%= link_to t("category.delete"), admin_category_path(category),
+                class: "btn btn-danger", method: :delete, data: {confirm: t("category.sure")} %>
             </td>
           </tr>
           <% end %>
@@ -39,4 +37,5 @@
       </table>
     </div>
   </div>
+  <%= will_paginate @categories %>
 </div>
