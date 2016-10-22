@@ -8,6 +8,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    @products = @category.products.all
   end
 
   def new

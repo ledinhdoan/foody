@@ -28,7 +28,7 @@ class SuggestsController < ApplicationController
   end
 
   def update
-    if @suggest.update_attribute suggest_params
+    if @suggest.update_attributes suggest_params
       flash.now[:success] = "done"
       redirect_to @suggest
     else

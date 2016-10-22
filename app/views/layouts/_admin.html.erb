@@ -56,8 +56,11 @@
                 <div id="dropdown-lvl2" class="panel-collapse collapse">
                   <div class="panel-body">
                     <ul class="nav navbar-nav">
-                      <li><%= link_to t("product.newproduct"), "#" %></li>
-                      <li><%= link_to t("product.showallproduct"), "#" %></li>
+                      <li>
+                        <%= link_to t("product.newproduct"), new_admin_product_path
+                          %></li>
+                      <li>
+                        <%= link_to t("product.showallproduct"), admin_products_path %></li>
                     </ul>
                   </div>
                 </div>

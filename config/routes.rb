@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "staticpages#index"
   namespace :admin do
     root "admin/users#index"
-    resources :users, :categories
+    resources :users, :categories, :products
   end
   resources :products, only: [:index, :show]
   resources :categories, only: :index
