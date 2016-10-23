@@ -1,27 +1,13 @@
-class SuggestsController < ApplicationController
+class Admin::SuggestsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_suggest, only: [:show, :update, :edit, :destroy]
 
-
   def index
-    @suggests = current_user.suggests
+    @suggests = Suggest.newest.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def show
-  end
-
-  def new
-    @suggest = Suggest.new
-  end
-
-  def create
-    @suggest = Suggest.new suggest_params
-    if @suggest.save
-      flash[:success] = "done"
-      redirect_to @suggest
-    else
-      render :new
-    end
   end
 
   def edit
@@ -30,7 +16,7 @@ class SuggestsController < ApplicationController
   def update
     if @suggest.update_attributes suggest_params
       flash.now[:success] = "done"
-      redirect_to @suggest
+      redirect_to admin_suggests_path
     else
       flash.now[:warning] = "fail"
       render :edit
@@ -57,6 +43,6 @@ class SuggestsController < ApplicationController
   end
 
   def suggest_params
-    params.require(:suggest).permit :name, :body, :image, :price, :status, :user_id
+    params.require(:suggest).permit :name, :body, :image, :price, :status
   end
 end

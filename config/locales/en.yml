@@ -12,6 +12,7 @@ en:
   togglenavigation: "Toggle navigation"
   welcome: "Welcome admin page"
   index: "Index page"
+  home: "Home Page"
   layout:
     title: "Food & Drink | Order Online"
     sign_in: "Sign in"

@@ -1,0 +1,26 @@
+<%= link_to t("suggest.create"), new_suggest_path %>
+<p><b><%= t "suggest.notice" %></b></p>
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <thead>
+    <tr>
+      <th><%= t "suggest.name_label" %></th>
+      <th><%= t "suggest.message" %></th>
+      <th><%= t "suggest.price_suggest" %></th>
+      <th><%= t "suggest.status" %></th>
+      <th><%= t "suggest.image" %></th>
+    </tr>
+  </thead>
+  <% @suggests.each do |suggest| %>
+  <tbody>
+    <td><%= link_to suggest.name, suggest_path(suggest) %></td>
+    <td><%= suggest.body %></td>
+    <td><%= number_to_currency suggest.price %></td>
+    <td><%= suggest.status? ? t("suggest.sent") : t("suggest.pending") %></td>
+    <td><%= image_tag suggest.image.url %></td>
+    <% unless suggest.status? %>
+    <td><%= link_to t("suggest.edits"), edit_admin_suggest_path(suggest) %></td>
+    <td><%= link_to t("suggest.delete"), admin_suggest_path(suggest), method: :delete, data: {confirm: "sure?"} %></td>
+    <% end %>
+  </tbody>
+  <% end %>
+</table>

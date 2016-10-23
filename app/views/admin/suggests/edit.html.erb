@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @suggest], :html => {:multipart => true} do |f| %>
+  <div id="form-main">
+    <div id="form-div">
+      <div class="form" id="form1">
+        <%= f.input :name, disabled: true, label: t("suggest.name_label") %>
+
+        <%= f.input :body, disabled: true, label: t("suggest.message") %>
+
+        <%= f.input :price, disabled: true, label: t("suggest.price_suggest") %>
+
+        <%= f.input :status, check_box: t("suggest.price_suggest") %>
+
+        <%= f.input :image, disabled: true, as: :file, label: t("suggest.image") %>
+
+        <%= f.button :submit,  class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+    </div>
+  </div>
+<% end %>
