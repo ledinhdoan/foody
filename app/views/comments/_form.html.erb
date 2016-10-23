@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <h3><%= t "comment.new" %></h3>
+  <%= simple_form_for [@product, @product.comments.build], remote: true do |f| %>
+    <p><%= f.input :rating, collection: 1..5, prompt: t("comment.rate") %></p>
+    <p><%= f.input :content, placeholder: t("comment.placeholder"), class: "form-control" %></p>
+    <p> <%= f.submit t("comment.submit"), class: "btn btn-primary" %></p>
+  <% end %>
+<% end %>

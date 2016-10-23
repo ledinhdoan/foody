@@ -1,0 +1,5 @@
+var comments_list = $('#comments-list');
+  comments_list.prepend('<%= j render @comment %>');
+  comments_list.find('div:last-child').addClass('last-comment');
+$('#comment-form').html('<%= j render 'comments/form' %>');
+$('#comment_content').val('');

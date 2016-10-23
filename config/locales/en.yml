@@ -74,6 +74,7 @@ en:
     desc_by_price: "Desc by price"
     quick_view: "Quick view"
     quick_review: "Quick review:"
+    not_found: "Product not found"
   category:
     show_more: "show more"
   suggest:
@@ -90,3 +91,16 @@ en:
     sent: "Sent"
     pending: "Pending"
     back: "Back to index"
+  comment:
+    create: "Create comment success"
+    updated: "Update comment success"
+    deleted: "Deleted"
+    not_found: "Comment not found"
+    confirm_delete: "Are you sure?"
+    edit: "Edit"
+    delete: "Delete"
+    new: "Add new comment"
+    placeholder: "Add your comment here"
+    submit: "Send"
+    title: "Comments"
+    rate: "Rate for product"
