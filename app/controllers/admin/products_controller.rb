@@ -13,6 +13,9 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all
+    @suggest_name = params[:g_name]
+    @suggest_price = params[:g_price]
+    @suggest_body = params[:g_body]
   end
 
   def create
@@ -40,7 +43,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     if @product.destroy
       flash[:success] = t "product.deleted"
-      redirect_to admin_categories_path
+      redirect_to admin_products_path
     else
       flash[:warning] = t "product.destroy_fail"
       redirect_to root_path

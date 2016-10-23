@@ -1,2 +1,25 @@
 <h1><%= t "product.new" %></h1>
-<%= render "form" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <%= simple_form_for [:admin, @product], :html => {:multipart => true} do |f| %>
+      <div id="form-main">
+        <div id="form-div">
+          <div class="form" id="form1">
+            <%= f.input :name , input_html: {value: @suggest_name},label: t("product.name_label") %>
+            <%= f.input :price, input_html: {value: @suggest_price} ,label: t("product.price") %>
+            <%= f.input :description, input_html: {value: @suggest_body} ,
+              label: t("product.description") %>
+            <%= f.input :discount, label: t("product.discount") %>
+            <%= f.input :image, as: :file, label: t("product.image") %>
+            <%= f.input :category_id, collection: @categories, label_method: :name, value_method: :id, include_blank: false %>
+            <%= f.button :submit,  class: "btn btn-lg btn-primary btn-block" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

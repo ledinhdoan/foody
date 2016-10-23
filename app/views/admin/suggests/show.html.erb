@@ -9,10 +9,16 @@
     </tr>
   </thead>
   <tbody>
-    <td><%= @suggest.name %></td>
-    <td><%= @suggest.body %></td>
-    <td><%= number_to_currency @suggest.price %></td>
-    <td><%= @suggest.status %></td>
-    <td><%= image_tag @suggest.image.url if @suggest.image? %></td>
+      <td><%= @suggest.name %></td>
+      <td><%= @suggest.body %></td>
+      <td><%= number_to_currency @suggest.price %></td>
+      <td><%= @suggest.status %></td>
+      <td><%= image_tag @suggest.image.url if @suggest.image? %></td>
+      <% if @suggest.status?  %>
+        <td colspan="3">
+          <%= link_to t("create"), new_admin_product_path( g_price: @suggest.price,
+            g_name: @suggest.name, g_body: @suggest.body ) %>
+        </td>
+      <% end %>
   </tbody>
 </table>
