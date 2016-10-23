@@ -2,10 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   protected
-  def verify_admin
-    if current_user && current_user.is_admin?
-      redirect_to admin_users_path
-    end
+  def is_admin
+    redirect_to root_path unless current_user.is_admin?
   end
 
   def load_user

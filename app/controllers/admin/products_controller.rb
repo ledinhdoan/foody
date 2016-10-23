@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   layout "admin_application"
   before_action :find_product, except: [:create, :new, :index]
+  before_action :is_admin
 
   def index
     @products = Product.asc_by_name.paginate page: params[:page],

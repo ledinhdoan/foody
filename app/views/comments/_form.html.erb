@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <h3><%= t "comment.new" %></h3>
+  <%= form_for [@product, @product.comments.build], remote: true do |f| %>
+    <p><%= f.text_area :content, placeholder: t("comment.placeholder"), class: "form-control" %></p>
+    <p> <%= f.submit t("comment.submit"), class: "btn btn-primary" %></p>
+  <% end %>
+<% end %>

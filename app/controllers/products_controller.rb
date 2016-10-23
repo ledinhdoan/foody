@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comments = @product.comments.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   private
