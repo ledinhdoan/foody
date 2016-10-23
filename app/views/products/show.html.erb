@@ -13,3 +13,11 @@
   <p class="quick_desc"><%= @product.description %></p>
 </div>
 <div class="clearfix"></div>
+<div id="comment-form">
+  <%= render "comments/form" %>
+</div>
+<h3><%= t "comment.title" %></h3>
+<div id="comments-list">
+  <%= render @comments %>
+  <%= will_paginate @comments %>
+</div>

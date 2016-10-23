@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     root "admin/users#index"
     resources :users
   end
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :comments
+  end
   resources :categories, only: [:index, :show]
   resources :suggests
 end

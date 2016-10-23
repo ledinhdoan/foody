@@ -1,0 +1,4 @@
+<% unless @comment.errors.any? %>
+  $('#comment_<%= @comment.id %>').replaceWith('<%= j render @comment %>')
+<% end %>
+<%= render 'shared/error_messages', object: @comment %>
