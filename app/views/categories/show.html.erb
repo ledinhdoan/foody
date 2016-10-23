@@ -1,0 +1,26 @@
+<div class="content_grid">
+  <% @products.each do |product| %>
+  <div class="col_1_of_3 span_1_of_3">
+    <div class="view view-first">
+      <div class="inner_content clearfix">
+        <div class="product_image">
+          <%= link_to product_path(product) do %>
+            <%= image_tag product.image.url if product.image? %>
+          <% end %>
+          <div class="mask">
+            <div class="info"><%= t "product.quick_view" %></div>
+          </div>
+          <div class="product_container">
+            <div class="cart-left">
+              <p class="title"> <%= product.name %></p>
+            </div>
+            <div class="price"><%= number_to_currency product.price %></div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= will_paginate @products %>

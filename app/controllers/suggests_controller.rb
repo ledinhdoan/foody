@@ -1,7 +1,6 @@
 class SuggestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_suggest, only: [:show, :update, :edit, :destroy]
-
+  before_action :load_suggest, except: [:new, :create]
 
   def index
     @suggests = current_user.suggests
@@ -28,7 +27,7 @@ class SuggestsController < ApplicationController
   end
 
   def update
-    if @suggest.update_attributes suggest_params
+    if @suggest.update_attribute suggest_params
       flash.now[:success] = "done"
       redirect_to @suggest
     else
