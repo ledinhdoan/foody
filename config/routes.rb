@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :users
   end
   resources :products, only: [:index, :show]
-  resources :categories, only: :index
+  resources :categories, only: [:index, :show]
   resources :suggests
 end
