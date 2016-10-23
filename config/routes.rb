@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks#create"}
   resources :staticpages, only: :index
   root "staticpages#index"
   namespace :admin do
