@@ -73,6 +73,7 @@ en:
     newproduct: "New Product"
     showallproduct: "Show all Product"
     not_found: "Product not found"
+    new: "New Product"
   category:
     show_more: "show more"
     category: "Category"
@@ -96,7 +97,7 @@ en:
     notice: "* You can edit/delete your suggested if status is pending "
     edits: "Edit"
     deltete: "Delete"
-    sent: "Sent"
+    sent: "Accepted"
     pending: "Pending"
     back: "Back to index"
   comment:
@@ -112,3 +113,11 @@ en:
     submit: "Send"
     title: "Comments"
     rate: "Rate for product"
+  contact:
+    contact: "Contact"
+    address: "Address"
+    phone: "Phone"
+    email: "email"
+    showaddress: "Framgia Da Nang"
+    showphone: "01632.492.429 | 0908.02.07.94"
+    showemail: "ledinhdoan.0083@gmail.com | xuangiangkt94@gmail.com"

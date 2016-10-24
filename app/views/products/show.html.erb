@@ -1,5 +1,7 @@
 <div class="labout span_1_of_a1">
-  <%= image_tag @product.image.url if @product.image? %>
+  <%= link_to product_path do %>
+    <%= image_tag @product.image.url if @product.image? %>
+  <% end %>
 </div>
 <div class="cont1 span_2_of_a1">
   <h1><%= @product.name %></h1>
