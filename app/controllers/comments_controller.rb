@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:content).merge user_id: current_user.id
+    params.require(:comment).permit(:content, :rating).merge user_id: current_user.id
   end
 
   def load_product

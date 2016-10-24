@@ -20,9 +20,10 @@
     <% if current_user == comment.user %>
       <%= link_to "", edit_product_comment_path(comment.product, comment),
         class: "glyphicon glyphicon-edit", title: t("comment.edit"), remote: true %>
-      <%= link_to "", product_comment_path(comment.product, comment), method: :delete,
-        data: {confirm: t("comment.confirm_delete")}, class: "glyphicon glyphicon-trash text-danger",
-         remote: true, title: t("comment.delete"), rel: "tooltip" %>
+      <%= link_to "", product_comment_path(comment.product, comment),
+        method: :delete, data: {confirm: t("comment.confirm_delete")},
+        class: "glyphicon glyphicon-trash text-danger",
+        remote: true, title: t("comment.delete"), rel: "tooltip" %>
     <% end %>
   </div>
   <hr/>

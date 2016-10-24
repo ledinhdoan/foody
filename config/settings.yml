@@ -3,3 +3,4 @@ product:
   limit: 6
 category:
   limit: 10
+loop_rating: [1, 2, 3, 4, 5]

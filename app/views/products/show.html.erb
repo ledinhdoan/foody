@@ -13,6 +13,8 @@
   <p class="quick_desc"><%= @product.description %></p>
 </div>
 <div class="clearfix"></div>
+<%= image_tag "star.png" %>
+<%= @avg_rating.to_f %>
 <div id="comment-form">
   <%= render "comments/form" %>
 </div>

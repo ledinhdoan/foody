@@ -14,6 +14,9 @@ class ProductsController < ApplicationController
   def show
     @comments = @product.comments.paginate page: params[:page],
       per_page: Settings.per_page
+    get_comment = @product.comments
+    @avg_rating = get_comment.average(:rating)
+      .present? ? get_comment.average(:rating) : 0
   end
 
   private
