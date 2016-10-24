@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   layout "admin_application"
   before_action :load_user, only: [:show, :destroy]
-  before_action :is_admin
+  before_action :verify_admin
 
   def index
     @users = User.asc_by_email.paginate page: params[:page],

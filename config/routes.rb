@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index, :show]
   resources :suggests
+  resources :contacts, only: :index
 end

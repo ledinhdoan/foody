@@ -14,7 +14,11 @@
     <td><%= suggest.body %></td>
     <td><%= number_to_currency suggest.price %></td>
     <td><%= suggest.status? ? t("suggest.sent") : t("suggest.pending") %></td>
-    <td><%= image_tag suggest.image.url %></td>
+    <td>
+      <%= link_to admin_suggest_path(suggest) do %>
+        <%= image_tag suggest.image.url %>
+      <% end %>
+    </td>
     <% unless suggest.status? %>
     <td><%= link_to t("suggest.edits"), edit_admin_suggest_path(suggest) %></td>
     <td><%= link_to t("suggest.delete"), admin_suggest_path(suggest), method: :delete, data: {confirm: "sure?"} %></td>
