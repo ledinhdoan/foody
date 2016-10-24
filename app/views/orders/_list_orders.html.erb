@@ -1,0 +1,23 @@
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <thead>
+    <th>Date time</th>
+    <th>Order id</th>
+    <th>Message</th>
+    <th>Status</th>
+    <th>Total price</th>
+  </thead>
+  <% @orders.each do |order| %>
+  <tbody>
+    <td><%= order.created_at.strftime('%b %d, %Y') %></td>
+    <td><%= link_to order.id, order %></td>
+    <td><%= order.message %></td>
+    <td><% if order.status? %>
+          <%= t "cart.accept" %>
+      <% else %>
+          <%= t "cart.pending" %>
+      <% end %>
+    </td>
+    <td><%= number_to_currency order.order_total %></td>
+  </tbody>
+  <% end %>
+</table>

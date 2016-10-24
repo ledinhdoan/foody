@@ -1,6 +1,6 @@
 class SuggestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_suggest, except: [:new, :create]
+  before_action :load_suggest, except: [:new, :create, :index]
 
   def index
     @suggests = current_user.suggests

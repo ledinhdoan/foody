@@ -1,0 +1,18 @@
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <thead>
+    <th><%= t "cart.product_name" %></th>
+    <th><%= t "cart.product_price" %></th>
+    <th><%= t "cart.message" %></th>
+    <th><%= t "cart.quantity"%></th>
+    <th><%= t "cart.total_price" %></th>
+  </thead>
+  <% @order.order_details.each do |item| %>
+  <tbody>
+    <td><%= link_to item.product.name, "#" %></td>
+    <td><%= number_to_currency item.product.price %></td>
+    <td><%= item.order.message %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.total_price %></td>
+  </tbody>
+  <% end %>
+</table>
