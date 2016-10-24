@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin_application"
   before_action :find_category, except: [:create, :new, :index]
-  before_action :is_admin
+  before_action :verify_admin
 
   def index
     @categories = Category.asc_by_name.paginate page: params[:page],

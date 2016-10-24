@@ -1,7 +1,7 @@
 class Admin::SuggestsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_suggest, only: [:show, :update, :edit, :destroy]
-  before_action :is_admin
+  before_action :verify_admin
 
   def index
     @suggests = Suggest.newest.paginate page: params[:page],
