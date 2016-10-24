@@ -14,7 +14,11 @@
           <% @products.each do |product| %>
           <tr>
             <td class="hidden-xs"><%= product.id %></td>
-            <td><%= image_tag product.image.url if product.image? %></td>
+            <td>
+              <%= link_to product_path(product) do %>
+              <%= image_tag product.image.url if product.image? %>
+              <% end %>
+            </td>
             <td class="hidden-xs"><%= link_to product.name,
               admin_product_path(product) %></td>
             <td>
