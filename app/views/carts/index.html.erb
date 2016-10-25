@@ -1,0 +1,11 @@
+<% if @cart.present? %>
+  <p><%= t "cart.total_price" %><%= @cart.total_price %>
+  <%= render "list_product" %>
+<% end %>
+<button id="show"><%= t "cart.checkout" %></button>
+<div class="form_checkout">
+  <%= form_for @order do |f| %>
+    <p><%= f.text_field :message, class: "form-control", placeholder: t("cart.placeholder_message") %></p>
+    <p><%= f.submit t("cart.order"), class: "btn btn-lg btn-primary btn-block" %></p>
+  <% end %>
+</div>

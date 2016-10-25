@@ -42,6 +42,7 @@
               <input value="product" name="type" type="hidden">
               <input placeholder="<%= t "layout.place_holder" %>" name="q" type="text">
               <button type="submit" value=""><i class="fa fa-search"></i></button>
+              <li><%= t "cart.count" %><%= @cart.count %></li>
             </form>
           </div>
         </div>
@@ -75,7 +76,7 @@
                 <div class="menu-caret"></div>
               </li>
               <li class="menu ">
-                <%= link_to t("layout.cart") %>
+                <%= link_to t("layout.cart"), carts_path %>
                 <div class="menu-caret"></div>
               </li>
             </ul>

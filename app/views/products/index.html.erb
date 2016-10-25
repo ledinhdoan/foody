@@ -27,6 +27,13 @@
             </div>
             <div class="price"><%= number_to_currency product.price %></div>
             <div class="clearfix"></div>
+
+            <%= link_to cart_path(product.id), remote: true, method: :patch, class: "btn btn-danger" do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+                             <%= t ".cart" %>
+                                            <% end %>
+
+
           </div>
         </div>
       </div>
