@@ -17,7 +17,7 @@
     <p><%= comment.content %></p>
   </div>
   <div >
-    <% if current_user == comment.user || current_user.is_admin? %>
+    <% if current_user == comment.user  || current_user.is_admin? %>
       <%= link_to "", edit_product_comment_path(comment.product, comment),
         class: "glyphicon glyphicon-edit", title: t("comment.edit"), remote: true %>
       <%= link_to "", product_comment_path(comment.product, comment),
