@@ -119,4 +119,13 @@ en:
     checkout: "Checkout"
     placeholder_message: "Enter your message here"
     count: "Your cart items: "
+  mail:
+    subject: "Suggested food"
+    title: "SUGGESTS"
+    note: "A new suggested food !"
+    name: "Suggested name: "
+    user: "User suggested: "
+    created_at: "Date: "
+    price: "Price: "
+    body: "Message: "
 
