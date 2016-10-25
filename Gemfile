@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "social-share-button", "~> 0.1.6"
+gem "whenever", :require => false
 gem "omniauth-facebook"
 gem "carrierwave", "0.10.0"
 gem "mini_magick", "3.8.0"

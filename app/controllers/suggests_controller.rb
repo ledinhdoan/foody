@@ -16,6 +16,7 @@ class SuggestsController < ApplicationController
   def create
     @suggest = Suggest.new suggest_params
     if @suggest.save
+      UserMailer.suggest_mail(@suggest).deliver_now
       flash[:success] = "done"
       redirect_to @suggest
     else

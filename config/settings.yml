@@ -4,3 +4,5 @@ product:
 category:
   limit: 10
 loop_rating: [1, 2, 3, 4, 5]
+mail_from: "xuangiangkt94@gmail.com"
+mail_to: "xuangiangkt94@gmail.com"
