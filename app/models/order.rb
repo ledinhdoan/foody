@@ -7,6 +7,7 @@ class Order < ApplicationRecord
 
   after_save :build_order_details
 
+  scope :newest, ->{order created_at: :desc}
   private
   def build_order_details
     cart.items.each do |item|

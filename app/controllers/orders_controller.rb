@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_order, only: :show
+  before_action :load_order, only: [:show, :update]
 
   def index
     @orders = current_user.orders.paginate page: params[:page],
@@ -26,7 +26,6 @@ class OrdersController < ApplicationController
 
   def show
   end
-
   private
   def order_params
     params.require(:order).permit(:message).merge! user: current_user,
