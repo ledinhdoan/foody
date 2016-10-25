@@ -17,6 +17,7 @@
 <div class="clearfix"></div>
 <%= image_tag "star.png" %>
 <%= @avg_rating.to_f %>
+<%= social_share_button_tag %>
 <div id="comment-form">
   <%= render "comments/form" %>
 </div>
